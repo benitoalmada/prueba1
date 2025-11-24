@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integración Multimedia</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        .contenedor {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: auto;
+            box-shadow: 0 0 10px #0003;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        iframe {
+            width: 100%;
+            border-radius: 10px;
+        }
+        canvas {
+            border: 2px solid #333;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+    <h1>Ejemplo de Integración Multimedia</h1>
+
+    <!-- 1. IMAGEN -->
+    <section>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.8442059624495!2d-57.58195192483137!3d-25.343008377617373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da9168445b57d%3A0x95f7e5b6b511699d!2sNihon%20Gakko!5e0!3m2!1ses!2spy!4v1764019540469!5m2!1ses!2spy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- 2. AUDIO -->
+    <section>
+        <h2>2. Audio en MP3</h2>
+        <audio controls>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" 
+                    type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
+    </section>
+
+    <!-- 3. VIDEO -->
+    <section>
+        <h2>3. Video desde archivo local (MP4)</h2>
+        <video width="500" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" 
+                    type="video/mp4">
+            Tu navegador no soporta video.
+        </video>
+
+        <h3>Video embebido de YouTube</h3>
+        <iframe width="560" height="315"
+src="https://www.youtube.com/embed/ScMzIvxBSi4"
+title="Big Buck Bunny"
+allowfullscreen>
+</iframe>
+<iframe
+  width="560" height="315"
+  src="https://www.youtube-nocookie.com/embed/ID_VIDEO"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/ScMzIvxBSi4"
+allowfullscreen></iframe>
+
+    </section>
+
+    <!-- 4. CANVAS -->
+    <section>
+        <h2>4. Canvas con dibujo</h2>
+        <canvas id="miCanvas" width="400" height="200"></canvas>
+
+        <script>
+            const canvas = document.getElementById("miCanvas");
+            const ctx = canvas.getContext("2d");
+
+            // Fondo
+            ctx.fillStyle = "#3498db";
+            ctx.fillRect(0, 0, 400, 200);
+
+            // Círculo
+            ctx.beginPath();
+            ctx.arc(200, 100, 60, 0, Math.PI * 2);
+            ctx.fillStyle = "#ffcc00";
+            ctx.fill();
+
+            // Texto
+            ctx.fillStyle = "#000";
+            ctx.font = "20px Arial";
+            ctx.fillText("Canvas en acción", 125, 190);
+        </script>
+    </section>
+
+</div>
+
+</body>
+</html>
